@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Adoção - Sistema de Adoção</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação Superior -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🐾</div>
+        <span>AdotaPet</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="animais.html" class="nav-link">🐕 Animais</a></li>
+        <li><a href="cadastrar-animal.html" class="nav-link">➕ Cadastrar Animal</a></li>
+        <li><a href="adocoes.html" class="nav-link">📋 Adoções</a></li>
+        <li><a href="cadastrar-adocao.html" class="nav-link nav-btn-highlight active">❤️ Registrar Adoção</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <header class="page-header" style="max-width: 720px; margin-left: auto; margin-right: auto;">
+      <div class="page-title-group">
+        <h1>❤️ Registrar Nova Adoção</h1>
+        <p>Vincule um tutor responsável a um animal disponível. A operação atualiza automaticamente o status do animal para <strong>Adotado</strong> via transação no banco de dados.</p>
+      </div>
+    </header>
+
+    <!-- Card de Formulário -->
+    <div class="form-card">
+      <form id="form-cadastrar-adocao" novalidate>
+        <div class="form-grid">
+
+          <!-- Seleção do Animal Disponível -->
+          <div class="form-group full-width">
+            <label for="id_animal">Animal a ser Adotado <span class="required">*</span></label>
+            <select id="id_animal" name="id_animal" required>
+              <option value="">Carregando animais disponíveis...</option>
+            </select>
+            <div class="form-helper">Apenas animais com status "Disponível" são exibidos nesta lista.</div>
+            <div class="form-feedback" id="feedback-id_animal"></div>
+          </div>
+
+          <!-- Nome do Adotante -->
+          <div class="form-group full-width">
+            <label for="nome_adotante">Nome Completo do Adotante <span class="required">*</span></label>
+            <input type="text" id="nome_adotante" name="nome_adotante" placeholder="Ex: Maria Silva" required>
+            <div class="form-feedback" id="feedback-nome_adotante"></div>
+          </div>
+
+          <!-- Telefone -->
+          <div class="form-group">
+            <label for="telefone">Telefone / WhatsApp com DDD <span class="required">*</span></label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Ex: (83) 99999-9999" maxlength="15" required>
+            <div class="form-feedback" id="feedback-telefone"></div>
+          </div>
+
+          <!-- E-mail -->
+          <div class="form-group">
+            <label for="email">E-mail para Contato <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Ex: maria@email.com" required>
+            <div class="form-feedback" id="feedback-email"></div>
+          </div>
+
+        </div>
+
+        <!-- Ações do Formulário -->
+        <div class="form-actions">
+          <a href="animais.html" class="btn btn-secondary">Cancelar</a>
+          <button type="submit" class="btn btn-accent" id="btn-submit">
+            ❤️ Registrar Adoção
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p><strong>AdotaPet</strong> — Sistema de Gerenciamento de Animais para Adoção (Ambiente Local)</p>
+      <p>Desenvolvido com HTML5, CSS3, JavaScript Vanilla, Node.js, Express e MySQL.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/cadastrar-adocao.js"></script>
+</body>
+</html>

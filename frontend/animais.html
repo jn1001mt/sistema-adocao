@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animais - Sistema de Adoção</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação Superior -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🐾</div>
+        <span>AdotaPet</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="animais.html" class="nav-link active">🐕 Animais</a></li>
+        <li><a href="cadastrar-animal.html" class="nav-link">➕ Cadastrar Animal</a></li>
+        <li><a href="adocoes.html" class="nav-link">📋 Adoções</a></li>
+        <li><a href="cadastrar-adocao.html" class="nav-link nav-btn-highlight">❤️ Registrar Adoção</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <header class="page-header">
+      <div class="page-title-group">
+        <h1>🐕 Gerenciamento de Animais</h1>
+        <p>Consulte, pesquise, edite e acompanhe o status de adoção de cada animal acolhido.</p>
+      </div>
+      <div>
+        <a href="cadastrar-animal.html" class="btn btn-primary">➕ Cadastrar Animal</a>
+      </div>
+    </header>
+
+    <!-- Barra de Busca e Filtros -->
+    <section class="filters-bar">
+      <!-- Busca por nome -->
+      <div class="filter-item search-item">
+        <label for="filtro-busca" class="filter-label">Buscar por Nome</label>
+        <div class="filter-input-wrapper">
+          <span class="input-icon">🔍</span>
+          <input type="text" id="filtro-busca" placeholder="Digite o nome do animal...">
+        </div>
+      </div>
+
+      <!-- Filtro por Espécie -->
+      <div class="filter-item">
+        <label for="filtro-especie" class="filter-label">Espécie</label>
+        <select id="filtro-especie">
+          <option value="">Todas as espécies</option>
+          <option value="Cachorro">Cachorro</option>
+          <option value="Gato">Gato</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <!-- Filtro por Status -->
+      <div class="filter-item">
+        <label for="filtro-status" class="filter-label">Status</label>
+        <select id="filtro-status">
+          <option value="">Todos os status</option>
+          <option value="Disponível">Disponível</option>
+          <option value="Adotado">Adotado</option>
+        </select>
+      </div>
+
+      <!-- Filtro por Porte -->
+      <div class="filter-item">
+        <label for="filtro-porte" class="filter-label">Porte</label>
+        <select id="filtro-porte">
+          <option value="">Todos os portes</option>
+          <option value="Pequeno">Pequeno</option>
+          <option value="Médio">Médio</option>
+          <option value="Grande">Grande</option>
+        </select>
+      </div>
+
+      <!-- Botão Limpar Filtros -->
+      <div class="filter-btn-group">
+        <button id="btn-limpar-filtros" class="btn btn-secondary" title="Limpar todos os filtros">
+          🔄 Limpar
+        </button>
+      </div>
+    </section>
+
+    <!-- Tabela de Animais -->
+    <section class="table-card">
+      <div class="table-responsive">
+        <table id="tabela-animais">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Espécie</th>
+              <th>Raça</th>
+              <th>Idade</th>
+              <th>Porte</th>
+              <th>Status</th>
+              <th style="text-align: center; min-width: 220px;">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-animais">
+            <!-- Linhas dinâmicas -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Container para loading ou estado vazio -->
+      <div id="animais-status-container"></div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p><strong>AdotaPet</strong> — Sistema de Gerenciamento de Animais para Adoção (Ambiente Local)</p>
+      <p>Desenvolvido com HTML5, CSS3, JavaScript Vanilla, Node.js, Express e MySQL.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/animais.js"></script>
+</body>
+</html>

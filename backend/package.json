@@ -1,0 +1,27 @@
+{
+  "name": "backend-adocao-animais",
+  "version": "1.0.0",
+  "description": "API REST para o Sistema de Gerenciamento de Animais para Adoção",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "init-db": "node config/init-db.js",
+    "test": "node test-api.js"
+  },
+  "keywords": [
+    "adocao",
+    "animais",
+    "express",
+    "mysql",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}
